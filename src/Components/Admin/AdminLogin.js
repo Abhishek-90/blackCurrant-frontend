@@ -61,6 +61,9 @@ const AdminLogin = () => {
     if (status === 200) {
       setAdminIn(true);
       window.alert('Admin Login Successful');
+    } else {
+      setAdminIn(false);
+      window.alert('Wrong Admin Credentials');
     }
     console.log(response);
   }
@@ -86,7 +89,17 @@ const AdminLogin = () => {
     );
     const status = response.status;
     response = await response.json();
+
+    if(response.numberExists) {
+      window.alert("Phone Number already Used, Use Different Number");
+    }
+
+    if(response.emailExists) {
+      window.alert("Email already Used, Use Different email");
+    }
+
     if (status === 200) {
+      window.alert('Aadhar Card Created');
       setAdminIn(true);
     }
     console.log(response);
@@ -132,7 +145,7 @@ const AdminLogin = () => {
           <h2>Enter Aadhar Details</h2>
           <input
             className={classes.inputStyle}
-            type="password"
+            type="text"
             placeholder="Enter First Name"
             value={aadharCredentials.fname}
             name="fname"
@@ -172,7 +185,7 @@ const AdminLogin = () => {
           />
           <input
             className={classes.inputStyle}
-            type="password"
+            type="text"
             placeholder="Enter Address"
             value={aadharCredentials.address}
             name="address"
