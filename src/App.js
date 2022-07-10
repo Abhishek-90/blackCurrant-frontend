@@ -1,7 +1,7 @@
 import classes from "./App.module.css";
 import User from "./Components/User/User.js";
 import AdminLogin from "./Components/Admin/AdminLogin.js";
-import { Routes,Route, NavLink } from "react-router-dom";
+import { Routes, Route, NavLink, Navigate } from "react-router-dom";
 
 function App() {
   return (
@@ -10,6 +10,8 @@ function App() {
       <NavLink className={classes.link} to="/user">User</NavLink>
       <div className={classes.container}>
         <Routes>
+          <Route exact path="/" element={<Navigate to="/admin" />}>
+          </Route>
           <Route exact path="/admin" element={<AdminLogin />} />
           <Route exact path="/user" element={<User />} />
         </Routes>
