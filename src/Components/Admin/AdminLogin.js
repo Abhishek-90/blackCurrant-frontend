@@ -60,6 +60,7 @@ const AdminLogin = () => {
     response = await response.json();
     if (status === 200) {
       setAdminIn(true);
+      window.alert('Admin Login Successful');
     }
     console.log(response);
   }
@@ -92,8 +93,8 @@ const AdminLogin = () => {
   }
 
   return (
-    <>
-      <div className={classes.userContainer}>
+    <div className={classes.container}>
+      <div className={classes.adminContainer}>
         <h2>Admin Login Page </h2>
         <h4>Login to Create New Aadhar</h4>
         <div className={classes.loginDiv}>
@@ -193,7 +194,7 @@ const AdminLogin = () => {
           </button>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
