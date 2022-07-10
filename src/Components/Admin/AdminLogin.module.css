@@ -1,0 +1,49 @@
+.userContainer {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginDiv {
+  height: 50%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputStyle {
+  height: 1.7rem;
+  width: 15rem;
+  margin-top: 1.4rem;
+  outline: none;
+}
+
+.buttonStyle {
+  height: 1.5rem;
+  width: 10rem;
+  margin-top: 1rem;
+}
+
+.aadharDetail {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .userContainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
